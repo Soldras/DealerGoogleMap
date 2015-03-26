@@ -1,0 +1,32 @@
+{extends file="layout.tpl"}
+
+{* Body Class *}
+{block name="body-class"}page-currency{/block}
+
+{* Breadcrumb *}
+{block name='no-return-functions' append}
+{$breadcrumbs = [
+['title' => {intl l="Dealers Map"}]
+]}
+{/block}
+
+
+{block name="main-content"}
+<div class="main">
+    <article class="col-main" role="main" aria-labelledby="main-label">
+        {google_map id="dealergooglemap-map" marker-src="{$URL}"}
+    </article>
+</div>
+{/block}
+
+{block name="stylesheet"}
+{hook name="dealermap.stylesheet"}
+{/block}
+
+{block name="after-javascript-include"}
+{hook name="dealermap.after-javascript-include"}
+{/block}
+
+{block name="javascript-initialization"}
+{hook name="dealermap.javascript-initialization"}
+{/block}

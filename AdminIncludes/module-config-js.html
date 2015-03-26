@@ -1,0 +1,28 @@
+<script>
+    $(document).ready(function() {
+        $("#dealergooglemap-success-msg").hide();
+        $("#dealergooglemap-form").on("submit", function(e, data){
+            e.preventDefault();
+            var form = $(this);
+
+            $('body').append('<div class="modal-backdrop fade in" id="loading-event"><div class="loading"></div></div>');
+
+            $.ajax({
+                url: form.attr('action'),
+                type: form.attr('method'),
+                data: form.serialize()
+            }).done(function(){
+                $("#loading-event").remove();
+            })
+                    .success(function(data) {
+                            $("#dealergooglemap-success-msg").html(data.message).show()
+                    })
+                    .fail(function(jqXHR, textStatus, errorThrown){
+                        $("#loading-event").remove();
+                        $('#dealergooglemap-failed-body').html(jqXHR.responseJSON.message);
+                        $("#dealergooglemap-failed").modal("show");
+                    });
+
+        });
+    });
+</script>

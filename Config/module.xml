@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="http://thelia.net/schema/dic/module"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://thelia.net/schema/dic/module http://thelia.net/schema/dic/module/module-2_1.xsd">
+    <fullnamespace>DealerGoogleMap\DealerGoogleMap</fullnamespace>
+    <descriptive locale="en_US">
+        <title>Google Map Dealer</title>
+        <subtitle>Module Google Map for Dealers</subtitle>
+    </descriptive>
+    <descriptive locale="fr_FR">
+        <title>Point de vente Google Map</title>
+        <subtitle>Module Google Map pour les points de ventes</subtitle>
+    </descriptive>
+    <!-- <logo></logo> -->
+    <languages>
+        <language>en_US</language>
+        <language>fr_FR</language>
+    </languages>
+    <version>0.1</version>
+    <author>
+        <name>Penalver antony</name>
+        <email>apenalver@openstudio.fr</email>
+    </author>
+    <type>classic</type>
+
+    <required>
+        <module version="&gt;=0.1">Dealer</module>
+        <module version="&gt;=0.1">TheliaGoogleMap</module>
+    </required>
+
+    <thelia>2.1.2</thelia>
+    <stability>other</stability>
+</module>
